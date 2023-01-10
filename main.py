@@ -176,4 +176,4 @@ def send_text(message):
         bot.send_message(message.chat.id, "Не совсем понял что ты хочешь. У тебя есть кнопка Помощь 🛑 (/help),  воспользуйся ей или другими кнопками")
 
 
-bot.polling(none_stop=True)
+bot.polling(none_stop=True, timeout=120)
