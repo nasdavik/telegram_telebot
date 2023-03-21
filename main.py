@@ -3,6 +3,7 @@ from telebot import types
 from auth_data import token
 import json
 import re
+import time
 from gett_calendar import my_calendar
 
 
@@ -176,4 +177,8 @@ def send_text(message):
         bot.send_message(message.chat.id, "Не совсем понял что ты хочешь. У тебя есть кнопка Помощь 🛑 (/help),  воспользуйся ей или другими кнопками")
 
 
-bot.polling(none_stop=True, timeout=120)
+while True:
+    try:
+     bot.polling(none_stop=True)
+    except:
+     time.sleep(8)
